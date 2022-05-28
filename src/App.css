@@ -1,7 +1,10 @@
 .App {
-  text-align: center;
-  background: url(./motivation-background.jpg) center no-repeat;
   height: 100vh;
+  background: url(./motivation-background.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

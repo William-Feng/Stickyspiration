@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Quote from "./Quote";
+import Quote from "./components/Quote";
 
 function App() {
   return (

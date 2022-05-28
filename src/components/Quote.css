@@ -1,0 +1,32 @@
+.quote {
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  position: fixed;
+  top: 10%;
+  padding: 1em 1.5em 2em;
+}
+
+.text-container {
+  margin: 0 3em;
+}
+
+.author-container {
+  margin-top: -20px;
+  text-align: right;
+  font-style: italic;
+}
+
+.quote-left {
+  position: relative;
+  font-size: 25px;
+  margin-bottom: -1.5em;
+  left: -48%;
+}
+
+.quote-right {
+  position: relative;
+  font-size: 25px;
+  top: -1.5em;
+  left: 48%;
+}

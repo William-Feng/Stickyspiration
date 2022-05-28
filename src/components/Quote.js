@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
+import "./Quote.css";
 
 function Quote() {
   const [quote, setQuote] = useState("");
@@ -14,9 +16,15 @@ function Quote() {
   }, []);
 
   return (
-    <div>
-      {quote.content}
-      {quote.author}
+    <div className="quote">
+      <ImQuotesLeft className="quote-left" />
+      <div className="text-container">
+        <h1>{quote.content}</h1>
+      </div>
+      <ImQuotesRight className="quote-right" />
+      <div className="author-container">
+        <h3>&ndash; {quote.author}</h3>
+      </div>
       <button onClick={fetchQuote}>Get new quote</button>
     </div>
   );
