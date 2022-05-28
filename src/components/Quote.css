@@ -8,7 +8,7 @@
 }
 
 .text-container {
-  margin: 0 3em;
+  margin: -0.5em 3em;
 }
 
 .author-container {
@@ -19,14 +19,14 @@
 
 .quote-left {
   position: relative;
-  font-size: 25px;
+  font-size: 1.5em;
   margin-bottom: -1.5em;
   left: -48%;
 }
 
 .quote-right {
   position: relative;
-  font-size: 25px;
+  font-size: 1.5em;
   top: -1.5em;
   left: 48%;
 }
@@ -34,8 +34,8 @@
 button {
   border-radius: 20px;
   cursor: pointer;
-  background-color: rgba(22, 76, 167, 0.7);
-  width: 20%;
+  background-color: rgb(65, 105, 175);
+  width: 10em;
   height: 3em;
   border: none;
   font-size: 1em;
@@ -49,4 +49,49 @@ button:hover {
 
 button:active {
   border: 1px solid rgb(22, 76, 167);
+}
+
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 1.75em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  .quote-left {
+    font-size: 1.25em;
+  }
+  .quote-right {
+    font-size: 1.25em;
+  }
+  button {
+    margin-top: 0.5em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .text-container {
+    margin: 0 2em;
+  }
+  button {
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.25em;
+  }
+  .quote-left {
+    font-size: 1em;
+  }
+  .quote-right {
+    font-size: 1em;
+  }
+  .text-container {
+    margin: 0 1em;
+  }
 }

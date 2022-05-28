@@ -8,3 +8,15 @@
   align-items: center;
   text-align: center;
 }
+
+@media screen and (max-width: 800px) {
+  .App {
+    background-position: 30% top;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    background-position: left top;
+  }
+}
