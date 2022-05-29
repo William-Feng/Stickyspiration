@@ -3,9 +3,12 @@ import "./Note.css";
 
 function AddNote({ handleAddNote }) {
   const [text, setText] = useState("");
+  const characterLimit = 300;
 
   const handleChange = (event) => {
-    setText(event.target.value);
+    if (characterLimit - event.target.value.length >= 0) {
+      setText(event.target.value);
+    }
   };
 
   const handleSave = () => {
@@ -25,7 +28,9 @@ function AddNote({ handleAddNote }) {
         onChange={handleChange}
       />
       <div className="note-footer">
-        <small className="extra-info">300 characters remaining</small>
+        <small className="extra-info">
+          {characterLimit - text.length} characters remaining
+        </small>
         <button className="save-button" onClick={handleSave}>
           Save
         </button>
