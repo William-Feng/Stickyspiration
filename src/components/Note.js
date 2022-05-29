@@ -7,8 +7,10 @@ function Note({ id, text, date }) {
     <div className="note">
       <p>{text}</p>
       <div className="note-footer">
-        <small className="date">Last modified: {date}</small>
-        <MdDelete size={"20px"} />
+        <small className="extra-info">Last modified: {date}</small>
+        <button className="delete-button">
+          <MdDelete />
+        </button>
       </div>
     </div>
   );
