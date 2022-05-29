@@ -19,11 +19,11 @@ function Quote() {
     <div className="quote">
       <ImQuotesLeft className="quote-left" />
       <div className="text-container">
-        <h1>{quote.content}</h1>
+        <h2>{quote.content}</h2>
       </div>
       <ImQuotesRight className="quote-right" />
       <div className="author-container">
-        <h3>&ndash; {quote.author}</h3>
+        <h4>&ndash; {quote.author}</h4>
       </div>
       <button className="quote-button" onClick={fetchQuote}>
         New quote!

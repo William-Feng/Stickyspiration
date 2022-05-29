@@ -3,7 +3,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   position: fixed;
-  top: 10%;
+  top: 5%;
   padding: 0.5em 1.5em 1.5em;
 }
 
@@ -52,11 +52,8 @@
 }
 
 @media screen and (max-width: 1200px) {
-  h1 {
-    font-size: 1.75em;
-  }
-  h3 {
-    font-size: 1em;
+  h2 {
+    font-size: 1.5em;
   }
   .quote-left {
     font-size: 1.25em;
@@ -70,20 +67,24 @@
 }
 
 @media screen and (max-width: 800px) {
-  h1 {
-    font-size: 1.5em;
+  h2 {
+    font-size: 1.25em;
+  }
+  h4 {
+    font-size: 0.8em;
   }
   .text-container {
     margin: 0 2em;
   }
   .quote-button {
     margin-top: 1em;
+    font-size: 0.8em;
   }
 }
 
 @media screen and (max-width: 480px) {
-  h1 {
-    font-size: 1.25em;
+  h2 {
+    font-size: 1em;
   }
   .quote-left {
     font-size: 1em;
