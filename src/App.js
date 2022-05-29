@@ -7,6 +7,7 @@ import NotesList from "./components/NotesList";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [showPlus, setShowPlus] = useState(true);
 
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem("notes-data"));
@@ -28,6 +29,7 @@ function App() {
     };
     const updatedNotes = [...notes, newNote];
     setNotes(updatedNotes);
+    setShowPlus(true);
   };
 
   const deleteNote = (id) => {
@@ -43,6 +45,8 @@ function App() {
         notes={notes}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
+        showPlus={showPlus}
+        setShowPlus={setShowPlus}
       />
     </div>
   );

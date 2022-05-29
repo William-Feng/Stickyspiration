@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import AddDefault from "./AddDefault";
 import AddNote from "./AddNote";
 import Note from "./Note";
 import "./NotesList.css";
 
-function NotesList({ notes, handleAddNote, handleDeleteNote }) {
+function NotesList({
+  notes,
+  handleAddNote,
+  handleDeleteNote,
+  showPlus,
+  setShowPlus,
+}) {
+  const noteLimit = 8;
+
   return (
     <div className="container">
       {notes.map((note) => (
@@ -15,7 +24,16 @@ function NotesList({ notes, handleAddNote, handleDeleteNote }) {
           handleDeleteNote={handleDeleteNote}
         />
       ))}
-      <AddNote handleAddNote={handleAddNote} />
+      {notes.length < noteLimit && showPlus && (
+        <AddDefault
+          onClick={() => {
+            setShowPlus(false);
+          }}
+        />
+      )}
+      {notes.length < noteLimit && !showPlus && (
+        <AddNote handleAddNote={handleAddNote} />
+      )}
     </div>
   );
 }

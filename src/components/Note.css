@@ -1,6 +1,6 @@
 .note {
   height: 12em;
-  background-color: #ffffcc;
+  background-color: rgb(255, 255, 204);
   border-radius: 10px;
   text-align: left;
   padding: 1.5em;
@@ -8,10 +8,25 @@
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-wrap;
+  overflow: auto;
 }
 
 .new.note {
   background-color: rgb(115, 255, 245);
+}
+
+.plus.note {
+  background-color: rgba(255, 255, 204, 0.2);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgb(50, 50, 50);
+  transition: 0.2s;
+}
+
+.plus.note:hover {
+  background: rgba(255, 255, 204, 0.4);
+  color: rgb(20, 20, 20);
 }
 
 .note-footer {
