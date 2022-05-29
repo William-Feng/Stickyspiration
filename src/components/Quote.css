@@ -31,7 +31,7 @@
   left: 48%;
 }
 
-button {
+.quote-button {
   border-radius: 20px;
   cursor: pointer;
   background-color: rgb(65, 105, 175);
@@ -43,12 +43,12 @@ button {
   user-select: none;
 }
 
-button:hover {
+.quote-button:hover {
   background-color: rgb(150, 188, 255);
 }
 
-button:active {
-  border: 1px solid rgb(22, 76, 167);
+.quote-button:active {
+  background-color: royalblue;
 }
 
 @media screen and (max-width: 1200px) {
@@ -64,7 +64,7 @@ button:active {
   .quote-right {
     font-size: 1.25em;
   }
-  button {
+  .quote-button {
     margin-top: 0.5em;
   }
 }
@@ -76,7 +76,7 @@ button:active {
   .text-container {
     margin: 0 2em;
   }
-  button {
+  .quote-button {
     margin-top: 1em;
   }
 }

@@ -1,0 +1,18 @@
+.music-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 3em;
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  padding: 0;
+}
+
+.music-button:hover {
+  color: rgb(150, 188, 255);
+}
+
+.music-button:active {
+  color: royalblue;
+}

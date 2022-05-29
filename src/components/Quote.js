@@ -25,7 +25,9 @@ function Quote() {
       <div className="author-container">
         <h3>&ndash; {quote.author}</h3>
       </div>
-      <button onClick={fetchQuote}>New quote!</button>
+      <button className="quote-button" onClick={fetchQuote}>
+        New quote!
+      </button>
     </div>
   );
 }
