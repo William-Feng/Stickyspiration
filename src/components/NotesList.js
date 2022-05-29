@@ -3,13 +3,13 @@ import AddNote from "./AddNote";
 import Note from "./Note";
 import "./NotesList.css";
 
-function NotesList({ notes }) {
+function NotesList({ notes, handleAddNote }) {
   return (
     <div className="container">
       {notes.map((note) => (
-        <Note id={note.id} text={note.text} date={note.date} />
+        <Note key={note.id} id={note.id} text={note.text} date={note.date} />
       ))}
-      <AddNote />
+      <AddNote handleAddNote={handleAddNote} />
     </div>
   );
 }

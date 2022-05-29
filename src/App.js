@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { nanoid } from "nanoid";
 import "./App.css";
 import Music from "./components/Music";
 import Quote from "./components/Quote";
@@ -7,32 +8,43 @@ import NotesList from "./components/NotesList";
 function App() {
   const [notes, setNotes] = useState([
     {
-      id: 1,
+      id: nanoid(),
       text: "This is my first note",
-      date: "27/05",
+      date: "27/05/2022",
     },
     {
-      id: 2,
+      id: nanoid(),
       text: "This is my second note",
-      date: "28/05",
+      date: "28/05/2022",
     },
     {
-      id: 3,
+      id: nanoid(),
       text: "This is my third note",
-      date: "29/05",
+      date: "29/05/2022",
     },
     {
-      id: 4,
+      id: nanoid(),
       text: "This is my last note",
-      date: "30/05",
+      date: "30/05/2022",
     },
   ]);
+
+  const addNote = (text) => {
+    const date = new Date();
+    const newNote = {
+      id: nanoid(),
+      text: text,
+      date: date.toLocaleDateString(),
+    };
+    const updatedNotes = [...notes, newNote];
+    setNotes(updatedNotes);
+  };
 
   return (
     <div className="App">
       <Music />
       <Quote />
-      <NotesList notes={notes} />
+      <NotesList notes={notes} handleAddNote={addNote} />
     </div>
   );
 }
