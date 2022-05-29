@@ -3,4 +3,7 @@
   width: 90%;
   position: absolute;
   bottom: 3em;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
