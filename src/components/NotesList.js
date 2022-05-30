@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import AddDefault from "./AddDefault";
+import React from "react";
 import AddNote from "./AddNote";
 import Note from "./Note";
 import "./NotesList.css";
@@ -24,15 +23,12 @@ function NotesList({
           handleDeleteNote={handleDeleteNote}
         />
       ))}
-      {notes.length < noteLimit && showPlus && (
-        <AddDefault
-          onClick={() => {
-            setShowPlus(false);
-          }}
+      {notes.length < noteLimit && (
+        <AddNote
+          handleAddNote={handleAddNote}
+          showPlus={showPlus}
+          setShowPlus={setShowPlus}
         />
-      )}
-      {notes.length < noteLimit && !showPlus && (
-        <AddNote handleAddNote={handleAddNote} />
       )}
     </div>
   );
