@@ -20,13 +20,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: rgb(50, 50, 50);
+  color: rgb(80, 80, 80);
   transition: 0.2s;
 }
 
 .plus.note:hover {
   background: rgba(255, 255, 204, 0.4);
-  color: rgb(20, 20, 20);
+  color: rgb(40, 40, 40);
 }
 
 .note-footer {
@@ -46,6 +46,7 @@
   background: none;
   font-size: 1.5em;
   padding: 0;
+  margin-bottom: -2px;
 }
 
 .delete-button:hover {
@@ -85,4 +86,16 @@ textarea:focus {
 
 .save-button:active {
   color: royalblue;
+}
+
+.color-label {
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.color-label::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 1px solid black;
 }
