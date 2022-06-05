@@ -7,6 +7,7 @@ function NotesList({
   notes,
   handleAddNote,
   handleDeleteNote,
+  handleUpdateNote,
   showPlus,
   setShowPlus,
 }) {
@@ -20,7 +21,9 @@ function NotesList({
           id={note.id}
           text={note.text}
           date={note.date}
+          colour={note.colour}
           handleDeleteNote={handleDeleteNote}
+          handleUpdateNote={handleUpdateNote}
         />
       ))}
       {notes.length < noteLimit && (

@@ -26,6 +26,7 @@ function App() {
       id: nanoid(),
       text: text,
       date: date.toLocaleDateString(),
+      colour: "#ffffcc",
     };
     const updatedNotes = [...notes, newNote];
     setNotes(updatedNotes);
@@ -37,6 +38,17 @@ function App() {
     setNotes(updatedNotes);
   };
 
+  const updateNoteColour = (id, color) => {
+    const updatedNotes = [];
+    for (let i = 0; i < notes.length; i++) {
+      if (notes[i].id === id) {
+        notes[i].colour = color;
+      }
+      updatedNotes.push(notes[i]);
+    }
+    setNotes(updatedNotes);
+  };
+
   return (
     <div className="App">
       <Music />
@@ -45,6 +57,7 @@ function App() {
         notes={notes}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
+        handleUpdateNote={updateNoteColour}
         showPlus={showPlus}
         setShowPlus={setShowPlus}
       />
