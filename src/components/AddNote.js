@@ -39,13 +39,14 @@ function AddNote({ handleAddNote, showPlus, setShowPlus }) {
             placeholder={"Type to add a note..."}
             value={text}
             onChange={handleChange}
+            className="new"
           />
           <div className="note-footer">
             <small className="extra-info">
               {characterLimit - text.length} characters remaining
             </small>
             <button
-              className="delete-button"
+              className="note-button"
               onClick={() => {
                 setShowPlus(true);
               }}

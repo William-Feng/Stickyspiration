@@ -39,7 +39,7 @@
   font-style: italic;
 }
 
-.delete-button {
+.note-button {
   cursor: pointer;
   border: none;
   background: none;
@@ -48,18 +48,17 @@
   margin-bottom: -2px;
 }
 
-.delete-button:hover {
+.note-button:hover {
   color: rgb(150, 188, 255);
 }
 
-.delete-button:active {
+.note-button:active {
   color: royalblue;
 }
 
 textarea {
   border: none;
   resize: none;
-  background-color: rgb(115, 255, 245);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -68,6 +67,10 @@ textarea {
 
 textarea:focus {
   outline: none;
+}
+
+textarea.new {
+  background-color: rgb(115, 255, 245);
 }
 
 .save-button {

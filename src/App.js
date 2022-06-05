@@ -38,14 +38,27 @@ function App() {
     setNotes(updatedNotes);
   };
 
-  const updateNoteColour = (id, color) => {
-    const updatedNotes = [];
-    for (let i = 0; i < notes.length; i++) {
-      if (notes[i].id === id) {
-        notes[i].colour = color;
+  const updateNoteContent = (id, text) => {
+    const date = new Date();
+    const updatedNotes = notes.map((note) => {
+      const newNote = { ...note };
+      if (note.id === id) {
+        newNote.text = text;
+        newNote.date = date.toLocaleDateString();
       }
-      updatedNotes.push(notes[i]);
-    }
+      return newNote;
+    });
+    setNotes(updatedNotes);
+  };
+
+  const updateNoteColour = (id, colour) => {
+    const updatedNotes = notes.map((note) => {
+      const newNote = { ...note };
+      if (note.id === id) {
+        newNote.colour = colour;
+      }
+      return newNote;
+    });
     setNotes(updatedNotes);
   };
 
@@ -57,7 +70,8 @@ function App() {
         notes={notes}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
-        handleUpdateNote={updateNoteColour}
+        handleUpdateNote={updateNoteContent}
+        handleNewColour={updateNoteColour}
         showPlus={showPlus}
         setShowPlus={setShowPlus}
       />
