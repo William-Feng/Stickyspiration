@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { MdCancel, MdEdit, MdDelete } from "react-icons/md";
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import "./Note.css";
@@ -69,7 +70,9 @@ function Note({
         </div>
       ) : (
         <div className="note" style={{ backgroundColor: colour }}>
-          <p>{text}</p>
+          <p>
+            <ReactMarkdown>{text}</ReactMarkdown>
+          </p>
           <div className="note-footer">
             <small className="extra-info">{date}</small>
             <div className="note-actions">
