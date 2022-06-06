@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AddNote from "./AddNote";
 import Note from "./Note";
 import "./NotesList.css";
@@ -13,11 +13,30 @@ function NotesList({
   showPlus,
   setShowPlus,
 }) {
-  const noteLimit = 8;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [noteLimit, setNoteLimit] = useState(8);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
+    return () => {
+      window.removeEventListener("resize", () =>
+        setWindowWidth(window.innerWidth)
+      );
+      if (windowWidth <= 600) {
+        setNoteLimit(2);
+      } else if (windowWidth <= 1000) {
+        setNoteLimit(4);
+      } else if (windowWidth <= 1400) {
+        setNoteLimit(6);
+      } else {
+        setNoteLimit(8);
+      }
+    };
+  }, [[], windowWidth]);
 
   return (
     <div className="container">
-      {notes.map((note) => (
+      {notes.slice(0, noteLimit).map((note) => (
         <Note
           key={note.id}
           id={note.id}
