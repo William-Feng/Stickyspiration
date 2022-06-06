@@ -14,6 +14,7 @@ function Note({
   date,
   colour,
   important,
+  characterLimit,
   handleDeleteNote,
   handleUpdateNote,
   handleNewColour,
@@ -23,8 +24,6 @@ function Note({
   const [editText, setEditText] = useState(text);
   const [color, setColor] = useState("#ffffcc");
   const [importance, setImportance] = useState(false);
-
-  const characterLimit = 300;
 
   const handleChange = (event) => {
     if (characterLimit - event.target.value.length >= 0) {

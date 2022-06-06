@@ -10,6 +10,18 @@
   overflow: auto;
 }
 
+@media screen and (max-width: 1200px) {
+  .note {
+    height: 11em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .note {
+    height: 10em;
+  }
+}
+
 .new.note {
   background-color: rgb(115, 255, 245);
 }

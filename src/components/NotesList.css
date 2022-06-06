@@ -1,8 +1,8 @@
 .container {
-  height: 55%;
+  height: 52%;
   width: 85%;
   position: absolute;
-  bottom: 3em;
+  bottom: 50px;
   display: grid;
   grid-gap: 2em;
   grid-auto-flow: column;
@@ -14,17 +14,29 @@
 @media screen and (max-width: 1400px) {
   .container {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5em;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .container {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 1.25em;
+    bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    height: 50%;
+    grid-gap: 1em;
+    bottom: 25px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .container {
     grid-template-columns: 1fr;
+    grid-gap: 15px;
   }
 }
