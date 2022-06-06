@@ -15,7 +15,6 @@ function NotesList({
 }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [noteLimit, setNoteLimit] = useState(8);
-  const [characterLimit, setCharacterLimit] = useState(300);
 
   useEffect(() => {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
@@ -25,10 +24,8 @@ function NotesList({
       );
       if (windowWidth <= 600) {
         setNoteLimit(2);
-        setCharacterLimit(200);
       } else if (windowWidth <= 1000) {
         setNoteLimit(4);
-        setCharacterLimit(250);
       } else if (windowWidth <= 1400) {
         setNoteLimit(6);
       } else {
@@ -47,7 +44,6 @@ function NotesList({
           date={note.date}
           colour={note.colour}
           important={note.important}
-          characterLimit={characterLimit}
           handleDeleteNote={handleDeleteNote}
           handleUpdateNote={handleUpdateNote}
           handleNewColour={handleNewColour}

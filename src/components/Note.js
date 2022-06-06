@@ -14,7 +14,6 @@ function Note({
   date,
   colour,
   important,
-  characterLimit,
   handleDeleteNote,
   handleUpdateNote,
   handleNewColour,
@@ -26,9 +25,7 @@ function Note({
   const [importance, setImportance] = useState(false);
 
   const handleChange = (event) => {
-    if (characterLimit - event.target.value.length >= 0) {
-      setEditText(event.target.value);
-    }
+    setEditText(event.target.value);
   };
 
   const handleEditCancel = () => {
@@ -64,47 +61,49 @@ function Note({
             style={{ backgroundColor: colour }}
           />
           <div className="note-footer">
-            <small className="extra-info">
-              {characterLimit - editText.length} characters remaining
-            </small>
-            <button className="note-button" onClick={handleEditCancel}>
-              <MdCancel />
-            </button>
-            <button className="save-button" onClick={handleEditSave}>
-              Save
-            </button>
+            <small className="extra-info">{editText.length} characters</small>
+            <div className="less note-actions">
+              <button className="note-button" onClick={handleEditCancel}>
+                <MdCancel />
+              </button>
+              <button className="save-button" onClick={handleEditSave}>
+                Save
+              </button>
+            </div>
           </div>
         </div>
       ) : (
         <div className="note" style={{ backgroundColor: colour }}>
           <p>{text}</p>
           <div className="note-footer">
-            <small className="extra-info">Last modified: {date}</small>
-            <input
-              type={"color"}
-              value={colour}
-              id={id}
-              className="color-label"
-              onChange={handleColor}
-            />
-            <button className="note-button" onClick={() => setEdit(true)}>
-              <MdEdit />
-            </button>
-            {!important ? (
-              <button className="note-button" onClick={handleStar}>
-                <MdStarBorder />
+            <small className="extra-info">{date}</small>
+            <div className="note-actions">
+              <button className="note-button" onClick={() => setEdit(true)}>
+                <MdEdit />
               </button>
-            ) : (
-              <button className="note-button" onClick={handleStar}>
-                <MdStar style={{ color: "red" }} />
+              <input
+                type={"color"}
+                value={colour}
+                id={id}
+                className="color-label"
+                onChange={handleColor}
+              />
+              {!important ? (
+                <button className="note-button" onClick={handleStar}>
+                  <MdStarBorder />
+                </button>
+              ) : (
+                <button className="note-button" onClick={handleStar}>
+                  <MdStar style={{ color: "red" }} />
+                </button>
+              )}
+              <button
+                className="note-button"
+                onClick={() => handleDeleteNote(id)}
+              >
+                <MdDelete />
               </button>
-            )}
-            <button
-              className="note-button"
-              onClick={() => handleDeleteNote(id)}
-            >
-              <MdDelete />
-            </button>
+            </div>
           </div>
         </div>
       )}

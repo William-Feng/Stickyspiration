@@ -45,6 +45,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid black;
+  padding-top: 5px;
+  margin-bottom: -15px;
+  user-select: none;
+}
+
+.note-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  gap: 0.5em;
+}
+
+.less.note-actions {
+  gap: 1em;
 }
 
 .extra-info {

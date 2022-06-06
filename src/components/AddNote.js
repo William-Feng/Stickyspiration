@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
+import { MdCancel } from "react-icons/md";
 import "./Note.css";
 
 function AddNote({ handleAddNote, showPlus, setShowPlus }) {
   const [text, setText] = useState("");
-  const characterLimit = 300;
 
   const handleChange = (event) => {
-    if (characterLimit - event.target.value.length >= 0) {
-      setText(event.target.value);
-    }
+    setText(event.target.value);
   };
 
   const handleSave = () => {
@@ -42,20 +39,20 @@ function AddNote({ handleAddNote, showPlus, setShowPlus }) {
             className="new"
           />
           <div className="note-footer">
-            <small className="extra-info">
-              {characterLimit - text.length} characters remaining
-            </small>
-            <button
-              className="note-button"
-              onClick={() => {
-                setShowPlus(true);
-              }}
-            >
-              <MdDelete />
-            </button>
-            <button className="save-button" onClick={handleSave}>
-              Save
-            </button>
+            <small className="extra-info">{text.length} characters</small>
+            <div className="less note-actions">
+              <button
+                className="note-button"
+                onClick={() => {
+                  setShowPlus(true);
+                }}
+              >
+                <MdCancel />
+              </button>
+              <button className="save-button" onClick={handleSave}>
+                Save
+              </button>
+            </div>
           </div>
         </div>
       )}
