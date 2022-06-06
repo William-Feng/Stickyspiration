@@ -27,6 +27,7 @@ function App() {
       text: text,
       date: date.toLocaleDateString(),
       colour: "#ffffcc",
+      important: false,
     };
     const updatedNotes = [...notes, newNote];
     setNotes(updatedNotes);
@@ -62,6 +63,17 @@ function App() {
     setNotes(updatedNotes);
   };
 
+  const updateNoteImportance = (id) => {
+    const updatedNotes = notes.map((note) => {
+      const newNote = { ...note };
+      if (note.id === id) {
+        newNote.important = !newNote.important;
+      }
+      return newNote;
+    });
+    setNotes(updatedNotes);
+  };
+
   return (
     <div className="App">
       <Music />
@@ -72,6 +84,7 @@ function App() {
         handleDeleteNote={deleteNote}
         handleUpdateNote={updateNoteContent}
         handleNewColour={updateNoteColour}
+        handleImportance={updateNoteImportance}
         showPlus={showPlus}
         setShowPlus={setShowPlus}
       />

@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { MdCancel, MdEdit, MdDelete } from "react-icons/md";
+import {
+  MdCancel,
+  MdEdit,
+  MdDelete,
+  MdStar,
+  MdStarBorder,
+} from "react-icons/md";
 import "./Note.css";
 
 function Note({
@@ -7,18 +13,16 @@ function Note({
   text,
   date,
   colour,
+  important,
   handleDeleteNote,
   handleUpdateNote,
   handleNewColour,
+  handleImportance,
 }) {
-  const [color, setColor] = useState("#ffffcc");
   const [edit, setEdit] = useState(false);
   const [editText, setEditText] = useState(text);
-
-  const handleColor = () => {
-    setColor(document.getElementById(id).value);
-    handleNewColour(id, color);
-  };
+  const [color, setColor] = useState("#ffffcc");
+  const [importance, setImportance] = useState(false);
 
   const characterLimit = 300;
 
@@ -36,6 +40,16 @@ function Note({
   const handleEditSave = () => {
     setEdit(false);
     handleUpdateNote(id, editText);
+  };
+
+  const handleColor = () => {
+    setColor(document.getElementById(id).value);
+    handleNewColour(id, color);
+  };
+
+  const handleStar = () => {
+    setImportance(!importance);
+    handleImportance(id);
   };
 
   return (
@@ -77,6 +91,15 @@ function Note({
             <button className="note-button" onClick={() => setEdit(true)}>
               <MdEdit />
             </button>
+            {!important ? (
+              <button className="note-button" onClick={handleStar}>
+                <MdStarBorder />
+              </button>
+            ) : (
+              <button className="note-button" onClick={handleStar}>
+                <MdStar style={{ color: "red" }} />
+              </button>
+            )}
             <button
               className="note-button"
               onClick={() => handleDeleteNote(id)}
