@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import {
-  MdCancel,
-  MdEdit,
-  MdDelete,
-  MdStar,
-  MdStarBorder,
-} from "react-icons/md";
+import { MdCancel, MdEdit, MdDelete } from "react-icons/md";
+import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import "./Note.css";
 
 function Note({
@@ -90,11 +85,11 @@ function Note({
               />
               {!important ? (
                 <button className="note-button" onClick={handleStar}>
-                  <MdStarBorder />
+                  <IoIosStarOutline />
                 </button>
               ) : (
                 <button className="note-button" onClick={handleStar}>
-                  <MdStar style={{ color: "red" }} />
+                  <IoIosStar style={{ color: "red" }} />
                 </button>
               )}
               <button

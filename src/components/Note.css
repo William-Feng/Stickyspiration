@@ -119,13 +119,23 @@ textarea.new {
 }
 
 .color-label {
-  appearance: none;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
   cursor: pointer;
+  border: none;
+  background: conic-gradient(
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
 }
 
 .color-label::-webkit-color-swatch {
-  border-radius: 50%;
-  border: 1px solid black;
+  display: none;
 }
