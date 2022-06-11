@@ -14,25 +14,32 @@ function NotesList({
   setShowPlus,
 }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [noteLimit, setNoteLimit] = useState(8);
 
   useEffect(() => {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
+    window.addEventListener("resize", () =>
+      setWindowHeight(window.innerHeight)
+    );
     return () => {
       window.removeEventListener("resize", () =>
         setWindowWidth(window.innerWidth)
       );
+      window.removeEventListener("resize", () =>
+        setWindowHeight(window.innerHeight)
+      );
       if (windowWidth <= 600) {
-        setNoteLimit(2);
+        windowHeight <= 840 ? setNoteLimit(1) : setNoteLimit(2);
       } else if (windowWidth <= 1000) {
-        setNoteLimit(4);
+        windowHeight <= 840 ? setNoteLimit(2) : setNoteLimit(4);
       } else if (windowWidth <= 1400) {
-        setNoteLimit(6);
+        windowHeight <= 840 ? setNoteLimit(3) : setNoteLimit(6);
       } else {
-        setNoteLimit(8);
+        windowHeight <= 840 ? setNoteLimit(4) : setNoteLimit(8);
       }
     };
-  }, [[], windowWidth]);
+  }, [[], windowWidth, windowHeight]);
 
   return (
     <div className="container">
