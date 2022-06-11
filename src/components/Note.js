@@ -87,7 +87,7 @@ function Note({
                 onChange={handleColor}
               />
               {!important ? (
-                <button className="note-button" onClick={handleStar}>
+                <button className="note-button star" onClick={handleStar}>
                   <IoIosStarOutline />
                 </button>
               ) : (

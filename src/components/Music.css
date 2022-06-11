@@ -11,9 +11,9 @@
 }
 
 .music-button:hover {
-  color: rgb(150, 188, 255);
+  color: rgb(0, 45, 125);
 }
 
 .music-button:active {
-  color: royalblue;
+  color: rgb(150, 188, 255);
 }

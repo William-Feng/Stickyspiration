@@ -34,21 +34,24 @@
 .quote-button {
   border-radius: 20px;
   cursor: pointer;
-  background-color: rgb(65, 105, 175);
+  background-color: rgb(55, 115, 230);
   width: 10em;
   height: 3em;
   border: none;
   font-size: 1em;
   font-weight: bold;
   user-select: none;
+  color: black;
 }
 
 .quote-button:hover {
-  background-color: rgb(150, 188, 255);
+  background-color: rgb(0, 45, 125);
+  color: grey;
 }
 
 .quote-button:active {
-  background-color: royalblue;
+  background-color: rgb(150, 188, 255);
+  color: black;
 }
 
 @media screen and (max-width: 1400px) {
